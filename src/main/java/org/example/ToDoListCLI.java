@@ -64,8 +64,11 @@ public class ToDoListCLI {
                     System.out.println("");
                     break;
                 case 3:
-                    System.out.print("Enter task ID: ");
+                    System.out.print("Enter task ID or enter 999 to exit: ");
                     int id = scanner.nextInt();
+                    if(id == 999){
+                        break;
+                    }
                     taskDao.deleteTask(id);
                     System.out.println("Task deleted successfully.");
                     System.out.println(" ");
